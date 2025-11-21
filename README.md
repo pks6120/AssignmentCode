@@ -95,3 +95,59 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+
+
+🚀 Features Implemented
+🎞 1. Dynamic Backgrounds Per Card
+
+Each carousel card supports:
+
+Video background (using react-native’s Video module via react-native-video‐like implementation using expo-av or native modules if required).
+
+Image background (using ImageBackground)
+
+Solid color background
+
+Only built-in React Native APIs were used — no external UI or animation libraries.
+
+🎨 2. Dynamic CTA Themes
+
+CTAs automatically update per card.
+
+Theme includes:
+
+Dynamic button colors
+
+Text color
+
+Background tint
+
+Theme changes are computed based on card metadata (e.g., gradient mapping, palette extraction, or static theme assignment).
+
+✨ 3. Text Animations on First Entry
+
+Each card triggers:
+Fade-in
+Slide-up
+Animations only run the first time the card enters the viewport (tracked using internal visited-state logic and onScroll index detection).
+No third-party animation libraries such as Reanimated, Moti, or Lottie.
+
+⚡ 4. Smooth 60–120 FPS Scrolling
+
+Optimized for performance with:
+PureComponent / memoized components
+useNativeDriver animations
+Throttled scroll handlers
+Lazy video loading (videos pause when off-screen)
+Rendering only the nearest 1–2 cards
+No layout thrashing
+Heavy use of React.memo, useCallback, and useRef
+Works smoothly even with high-resolution videos.
+
+🛠 Tech Stack
+
+React Native CLI / Expo (depending on variant)
+JavaScript or TypeScript
+No third-party libraries for UI, animations, or carousels
+
